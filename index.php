@@ -33,6 +33,24 @@ $link = mysqli_connect("remotemysql.com", "5UKVOnKf31", "gIuNH1PtMv")
     //    echo $i . "<br>";
     // }
 
+    $query = "SELECT * FROM guest_book";
+
+    $result = mysqli_query($link, $query)
+        or die("Ну удалось выполнить запрос");
+
+    echo "<table class='table', border='2'>\n";
+    while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
+        echo "<tr>";
+        echo "<td>" . $row[0] . "</td>";
+        echo "<td>" . $row[1] . "</td>";
+        echo "<td>" . $row[2] . "</td>";
+        echo "</tr>";
+    }
+    echo "</table>\n";
+
+    mysqli_free_result($result);
+
+    mysqli_close($link);
 
     ?>
 </body>
