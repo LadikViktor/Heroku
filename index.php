@@ -16,13 +16,13 @@ Password: gIuNH1PtMv
 Server: remotemysql.com
 Port: 3306
 
-
+guest_book
 */
 
 $link = mysqli_connect("remotemysql.com", "5UKVOnKf31", "gIuNH1PtMv")
     or die("Не удалось соединиться с сервером");
 
-    mysqli_select_db($link, "guest_book")
+    mysqli_select_db($link, "5UKVOnKf31")
     or die("Не удалось выбрать БД");
 
 
